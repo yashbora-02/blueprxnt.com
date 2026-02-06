@@ -1,0 +1,506 @@
+/* ========================================
+   ABOUT PAGE - PIXEL PERFECT STYLING
+   ======================================== */
+
+/* Hero Section */
+.about-hero {
+    padding: 6rem 0 4rem;
+    background-color: #0a0a0a;
+}
+
+@media (min-width: 768px) {
+    .about-hero {
+        padding: 8rem 0 5rem;
+    }
+}
+
+.about-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #0ea5e9;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.about-hero-title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .about-hero-title {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .about-hero-title {
+        font-size: 3.5rem;
+    }
+}
+
+.about-intro {
+    font-size: 1rem;
+    color: #a1a1aa;
+    line-height: 1.75;
+    max-width: 900px;
+}
+
+@media (min-width: 768px) {
+    .about-intro {
+        font-size: 1.125rem;
+    }
+}
+
+/* General About Sections */
+.about-section {
+    padding: 4rem 0;
+    background-color: #0a0a0a;
+}
+
+@media (min-width: 768px) {
+    .about-section {
+        padding: 5rem 0;
+    }
+}
+
+.section-heading {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .section-heading {
+        font-size: 2rem;
+    }
+}
+
+.section-text {
+    font-size: 1rem;
+    color: #a1a1aa;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    max-width: 900px;
+}
+
+@media (min-width: 768px) {
+    .section-text {
+        font-size: 1.125rem;
+    }
+}
+
+.section-bold {
+    font-size: 1rem;
+    color: white;
+    font-weight: 700;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .section-bold {
+        font-size: 1.125rem;
+    }
+}
+
+.turning-point {
+    font-size: 1rem;
+    color: #0ea5e9;
+    font-weight: 600;
+    line-height: 1.75;
+    margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+    .turning-point {
+        font-size: 1.125rem;
+    }
+}
+
+.section-text-emphasis {
+    font-size: 1rem;
+    color: #a1a1aa;
+    line-height: 1.75;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .section-text-emphasis {
+        font-size: 1.125rem;
+    }
+}
+
+/* Credentials Section */
+.credentials-section {
+    padding: 5rem 0;
+    background-color: #0a0a0a;
+}
+
+@media (min-width: 768px) {
+    .credentials-section {
+        padding: 6rem 0;
+    }
+}
+
+.credentials-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #0ea5e9;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.credentials-section > .container > .section-heading {
+    margin-bottom: 3rem;
+}
+
+.credentials-section > .container > .credentials-label:first-of-type {
+    margin-top: 0;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 640px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.stat-card {
+    background-color: #18181b;
+    border: 1px solid #3f3f46;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0ea5e9;
+    margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .stat-number {
+        font-size: 3rem;
+    }
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #a1a1aa;
+    line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+    .stat-label {
+        font-size: 0.95rem;
+    }
+}
+
+/* Results Box */
+.results-box {
+    background-color: rgba(20, 184, 166, 0.1);
+    border: 1px solid rgba(20, 184, 166, 0.3);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    .results-box {
+        padding: 2.5rem;
+    }
+}
+
+.results-box p {
+    font-size: 1rem;
+    color: white;
+    line-height: 1.75;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .results-box p {
+        font-size: 1.125rem;
+    }
+}
+
+.results-box strong {
+    font-weight: 700;
+    color: white;
+}
+
+/* Recognition List */
+.recognition-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 3rem 0;
+}
+
+.recognition-list li {
+    font-size: 1rem;
+    color: #a1a1aa;
+    line-height: 1.75;
+    padding-left: 2rem;
+    position: relative;
+    margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+    .recognition-list li {
+        font-size: 1.125rem;
+    }
+}
+
+.recognition-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #14b8a6;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+/* Certifications Grid */
+.certs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .certs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.cert-card {
+    background-color: #18181b;
+    border: 1px solid #3f3f46;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .cert-card {
+        padding: 2rem;
+    }
+}
+
+.cert-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .cert-title {
+        font-size: 1.25rem;
+    }
+}
+
+.cert-org {
+    font-size: 0.95rem;
+    color: #71717a;
+    margin: 0;
+}
+
+/* What Actually Worked Grid */
+.worked-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+@media (min-width: 768px) {
+    .worked-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+.worked-card {
+    background-color: #18181b;
+    border: 1px solid #3f3f46;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.checkmark-icon {
+    flex-shrink: 0;
+    color: #14b8a6;
+}
+
+.worked-card p {
+    font-size: 1rem;
+    color: #a1a1aa;
+    margin: 0;
+    line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+    .worked-card p {
+        font-size: 1.125rem;
+    }
+}
+
+/* Why I Built Blueprxnt Section */
+.why-blueprxnt-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(10, 10, 10, 0) 100%);
+    background-color: #0f1419;
+}
+
+@media (min-width: 768px) {
+    .why-blueprxnt-section {
+        padding: 6rem 0;
+    }
+}
+
+.section-heading-white {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .section-heading-white {
+        font-size: 2rem;
+    }
+}
+
+.section-text-white {
+    font-size: 1rem;
+    color: #a1a1aa;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    max-width: 900px;
+}
+
+@media (min-width: 768px) {
+    .section-text-white {
+        font-size: 1.125rem;
+    }
+}
+
+.elite-quote {
+    font-size: 1rem;
+    color: #0ea5e9;
+    font-weight: 600;
+    line-height: 1.75;
+    margin-top: 1.5rem;
+    max-width: 900px;
+}
+
+@media (min-width: 768px) {
+    .elite-quote {
+        font-size: 1.125rem;
+    }
+}
+
+/* What I Believe Section */
+.beliefs-box {
+    border-left: 4px solid #0ea5e9;
+    padding: 1.5rem 0 1.5rem 1.5rem;
+    margin: 2rem 0;
+    max-width: 800px;
+}
+
+.belief-line {
+    font-size: 1.125rem;
+    color: white;
+    line-height: 1.75;
+    margin: 0.5rem 0;
+}
+
+@media (min-width: 768px) {
+    .belief-line {
+        font-size: 1.25rem;
+    }
+}
+
+.belief-line-bold {
+    font-size: 1.125rem;
+    color: white;
+    font-weight: 700;
+    line-height: 1.75;
+    margin: 0.5rem 0;
+}
+
+@media (min-width: 768px) {
+    .belief-line-bold {
+        font-size: 1.25rem;
+    }
+}
+
+/* Work With Me CTA Section */
+.work-cta-section {
+    padding: 6rem 0;
+    background-color: #0a0a0a;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .work-cta-section {
+        padding: 8rem 0;
+    }
+}
+
+.cta-heading-centered {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .cta-heading-centered {
+        font-size: 2.5rem;
+    }
+}
+
+.cta-text-centered {
+    font-size: 1rem;
+    color: #a1a1aa;
+    line-height: 1.75;
+    margin: 0 auto 2.5rem;
+    max-width: 700px;
+}
+
+@media (min-width: 768px) {
+    .cta-text-centered {
+        font-size: 1.125rem;
+    }
+}
+
+.cta-button-center {
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Coaching - BLUEPRXNT</title>
+    <meta name="description" content="Let's build your system">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/apply-page.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="logo">BLUEPRXNT</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="system.html">The Blueprxnt System</a></li>
+                <li><a href="coaching.html">Coaching</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="apply.html" class="nav-cta">Apply for Coaching</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="apply-hero">
+        <div class="container">
+            <p class="apply-label">APPLY FOR COACHING</p>
+            <h1 class="apply-hero-title">Let's build your system</h1>
+            <p class="apply-hero-subtitle">Fill out the form below and we'll be in touch to discuss how Blueprxnt can help you achieve your performance goals.</p>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section class="application-form-section">
+        <div class="container">
+            <form class="application-form" id="applicationForm">
+                <div class="form-group">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="primaryGoal" class="form-label">Primary Goal</label>
+                    <select id="primaryGoal" name="primaryGoal" class="form-select" required>
+                        <option value="">Select your primary goal</option>
+                        <option value="body-composition">Body Composition (muscle gain, fat loss)</option>
+                        <option value="athletic-performance">Athletic Performance</option>
+                        <option value="health-longevity">Health Optimization & Longevity</option>
+                        <option value="energy-recovery">Energy & Recovery</option>
+                        <option value="executive-performance">Executive Performance</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="aboutYou" class="form-label">Tell us about yourself</label>
+                    <textarea id="aboutYou" name="aboutYou" class="form-textarea" rows="8" placeholder="What's your current situation? What have you tried? What does success look like for you?" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit-app">Submit Application</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>BLUEPRXNT</h3>
+                    <p>A performance health operating system built in elite sport and engineered for real life.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="index.html">The Problem</a></li>
+                        <li><a href="system.html">The System</a></li>
+                        <li><a href="index.html#how-it-works">How It Works</a></li>
+                        <li><a href="index.html#who">Who It's For</a></li>
+                    </ul>
+                </div>
+                <div class="footer-cta">
+                    <h4>Get Started</h4>
+                    <a href="apply.html" class="btn btn-primary">Apply for Coaching</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2026 Blueprxnt. All rights reserved.</p>
+                    <p class="footer-tagline">Performance Health</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

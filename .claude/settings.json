@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:blueprxnt.sintra.site)",
+      "Bash(git init:*)"
+    ]
+  }
+}
