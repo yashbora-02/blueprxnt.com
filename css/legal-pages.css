@@ -4,14 +4,14 @@
 
 /* Hero Section */
 .legal-hero {
-    padding: 5rem 0 3rem;
+    padding: 8rem 0 4rem;
     background-color: #0a0a0a;
     text-align: center;
 }
 
 @media (min-width: 768px) {
     .legal-hero {
-        padding: 6rem 0 4rem;
+        padding: 10rem 0 5rem;
     }
 }
 
