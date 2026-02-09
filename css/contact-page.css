@@ -48,7 +48,7 @@
 
 /* Section Label */
 .section-label {
-    font-size: 0.875rem;
+    font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 0.2em;
     color: #0ea5e9;
@@ -58,7 +58,7 @@
 /* Quick Actions Section */
 .quick-actions-section {
     padding: 4rem 0;
-    background-color: #0a0a0a;
+    background-color: #141414;
 }
 
 @media (min-width: 768px) {
@@ -144,6 +144,7 @@
 .contact-form-section {
     padding: 4rem 0;
     background-color: #0a0a0a;
+    text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -154,10 +155,12 @@
 
 .contact-form {
     max-width: 800px;
+    margin: 0 auto;
     background-color: #18181b;
     border: 1px solid #3f3f46;
     border-radius: 0.75rem;
     padding: 2rem;
+    text-align: left;
 }
 
 @media (min-width: 768px) {
@@ -172,10 +175,16 @@
 
 .form-label {
     display: block;
-    font-size: 1rem;
+    font-size: 1.125rem;
     font-weight: 600;
     color: white;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.625rem;
+}
+
+@media (min-width: 768px) {
+    .form-label {
+        font-size: 1.25rem;
+    }
 }
 
 .form-input,
@@ -238,7 +247,7 @@
 /* Contact Info Section */
 .contact-info-section {
     padding: 4rem 0 6rem;
-    background-color: #0a0a0a;
+    background-color: #141414;
 }
 
 @media (min-width: 768px) {

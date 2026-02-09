@@ -70,7 +70,7 @@
 /* Coaching Levels Section */
 .coaching-levels-section {
     padding: 6rem 0;
-    background-color: #0a0a0a;
+    background-color: #141414;
 }
 
 @media (min-width: 768px) {
@@ -80,12 +80,18 @@
 }
 
 .levels-label {
-    font-size: 0.875rem;
+    font-size: 1.25rem;
     font-weight: 700;
     letter-spacing: 0.2em;
     color: #0ea5e9;
     text-align: center;
     margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+    .levels-label {
+        font-size: 1.5rem;
+    }
 }
 
 .coaching-tier-card {
@@ -94,6 +100,7 @@
     border-radius: 0.75rem;
     padding: 1.5rem 1.25rem;
     margin-bottom: 1.5rem;
+    transition: all 200ms ease;
 }
 
 @media (min-width: 768px) {
@@ -108,9 +115,14 @@
     }
 }
 
+.coaching-tier-card:hover {
+    border-color: #0ea5e9;
+    transform: translateY(-2px);
+}
+
 .coaching-tier-card.elite-card {
-    border: 2px solid #0ea5e9;
-    background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(10, 10, 10, 0) 100%);
+    border: 1px solid #3f3f46;
+    background-color: #18181b;
 }
 
 .tier-card-title {
@@ -315,9 +327,9 @@
 .tier-goal {
     font-size: 0.8125rem;
     color: white;
-    font-weight: 700;
+    font-weight: 400;
     margin-top: 1rem;
-    text-align: center;
+    text-align: left;
     line-height: 1.5;
 }
 
@@ -418,7 +430,7 @@
 /* Results Section */
 .results-section {
     padding: 6rem 0;
-    background-color: #0a0a0a;
+    background-color: #141414;
 }
 
 @media (min-width: 768px) {
@@ -461,14 +473,21 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 @media (min-width: 768px) {
     .testimonials-row {
         grid-template-columns: repeat(2, 1fr);
-        gap: 3rem;
+        gap: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .testimonials-row {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
     }
 }
 

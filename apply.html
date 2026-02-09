@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apply for Coaching - BLUEPRXNT</title>
-    <meta name="description" content="Let's build your system">
+    <meta name="description" content="Complete this application so we can find the right coaching fit for you.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/apply-page.css">
 </head>
@@ -29,48 +32,301 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="apply-hero">
-        <div class="container">
-            <p class="apply-label">APPLY FOR COACHING</p>
-            <h1 class="apply-hero-title">Let's build your system</h1>
-            <p class="apply-hero-subtitle">Fill out the form below and we'll be in touch to discuss how Blueprxnt can help you achieve your performance goals.</p>
-        </div>
-    </section>
+    <!-- Application Section -->
+    <section class="application-section">
+        <div class="app-container">
+            <!-- Header -->
+            <div class="app-header">
+                <p class="app-label">APPLY FOR COACHING</p>
+                <h1 class="app-title">Blueprxnt Coaching Application</h1>
+                <p class="app-subtitle">Complete this application so we can find the right coaching fit for you.</p>
+            </div>
 
-    <!-- Application Form -->
-    <section class="application-form-section">
-        <div class="container">
-            <form class="application-form" id="applicationForm">
-                <div class="form-group">
-                    <label for="fullName" class="form-label">Full Name</label>
-                    <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Your name" required>
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-text">
+                    <span class="progress-step">Step <span id="currentStep">1</span> of 7</span>
+                    <span class="progress-percent"><span id="progressPercent">14</span>% complete</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <!-- Application Form -->
+            <form class="multi-step-form" id="applicationForm">
+
+                <!-- Step 1: Basic Information -->
+                <div class="form-step active" data-step="1">
+                    <div class="step-card">
+                        <h2 class="step-title">Basic Information</h2>
+
+                        <div class="form-group full-width">
+                            <label for="fullName" class="form-label">Full Name <span class="required">*</span></label>
+                            <input type="text" id="fullName" name="fullName" class="form-input" placeholder="John Doe" required>
+                            <p class="field-error">Required</p>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
+                                <p class="field-error">Required</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+1 (555) 000-0000" required>
+                                <p class="field-error">Required</p>
+                            </div>
+                        </div>
+
+                        <div class="form-row three-col">
+                            <div class="form-group">
+                                <label for="age" class="form-label">Age <span class="required">*</span></label>
+                                <input type="number" id="age" name="age" class="form-input" placeholder="35" required>
+                                <p class="field-error">Required</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="height" class="form-label">Height <span class="required">*</span></label>
+                                <input type="text" id="height" name="height" class="form-input" placeholder="5 ft 10 or 178cm" required>
+                                <p class="field-error">Required</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="weight" class="form-label">Weight (lbs) <span class="required">*</span></label>
+                                <input type="number" id="weight" name="weight" class="form-input" placeholder="180" required>
+                                <p class="field-error">Required</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="occupation" class="form-label">Occupation / What do you do for work? / Where do you live? <span class="required">*</span></label>
+                            <textarea id="occupation" name="occupation" class="form-textarea" rows="4" placeholder="E.g., Software Engineer, working remotely, based in Austin, TX" required></textarea>
+                            <p class="field-error">Required</p>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-continue" data-next="2">Continue →</button>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="email" class="form-label">Email Address</label>
-                    <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required>
+                <!-- Step 2: Goals & Readiness -->
+                <div class="form-step" data-step="2">
+                    <div class="step-card">
+                        <h2 class="step-title">Goals & Readiness</h2>
+
+                        <div class="form-group full-width">
+                            <label for="goals" class="form-label">What are your main health/fitness goals right now? <span class="required">*</span></label>
+                            <textarea id="goals" name="goals" class="form-textarea" rows="4" placeholder="Describe your health and performance goals..." required></textarea>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="obstacles" class="form-label">What's been the biggest obstacle holding you back? <span class="required">*</span></label>
+                            <textarea id="obstacles" name="obstacles" class="form-textarea" rows="4" placeholder="What has prevented you from reaching your goals?" required></textarea>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="urgency" class="form-label">Why is solving this important to you now (not later)? <span class="required">*</span></label>
+                            <textarea id="urgency" name="urgency" class="form-textarea" rows="4" placeholder="What's driving you to make a change right now?" required></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-back" data-prev="1">← Back</button>
+                            <button type="button" class="btn-continue" data-next="3">Continue →</button>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="primaryGoal" class="form-label">Primary Goal</label>
-                    <select id="primaryGoal" name="primaryGoal" class="form-select" required>
-                        <option value="">Select your primary goal</option>
-                        <option value="body-composition">Body Composition (muscle gain, fat loss)</option>
-                        <option value="athletic-performance">Athletic Performance</option>
-                        <option value="health-longevity">Health Optimization & Longevity</option>
-                        <option value="energy-recovery">Energy & Recovery</option>
-                        <option value="executive-performance">Executive Performance</option>
-                        <option value="other">Other</option>
-                    </select>
+                <!-- Step 3: Current State -->
+                <div class="form-step" data-step="3">
+                    <div class="step-card">
+                        <h2 class="step-title">Current State</h2>
+
+                        <div class="form-group full-width">
+                            <label class="form-label">How would you describe your current nutrition & training consistency? <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="consistency" value="very-consistent" required>
+                                    <span class="radio-label">Very consistent</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="consistency" value="somewhat-consistent">
+                                    <span class="radio-label">Somewhat consistent</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="consistency" value="inconsistent">
+                                    <span class="radio-label">Inconsistent</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="consistency" value="just-starting">
+                                    <span class="radio-label">Just getting started</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-back" data-prev="2">← Back</button>
+                            <button type="button" class="btn-continue" data-next="4">Continue →</button>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="aboutYou" class="form-label">Tell us about yourself</label>
-                    <textarea id="aboutYou" name="aboutYou" class="form-textarea" rows="8" placeholder="What's your current situation? What have you tried? What does success look like for you?" required></textarea>
+                <!-- Step 4: Priorities -->
+                <div class="form-step" data-step="4">
+                    <div class="step-card">
+                        <h2 class="step-title">Priorities</h2>
+                        <p class="step-description">Select up to 3 areas that matter most to you right now.</p>
+
+                        <div class="checkbox-grid">
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="priorities" value="fat-loss">
+                                <span class="checkbox-label">Fat loss / body composition</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="priorities" value="muscle-strength">
+                                <span class="checkbox-label">Muscle & strength</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="priorities" value="fitness">
+                                <span class="checkbox-label">Fitness & conditioning</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="priorities" value="energy">
+                                <span class="checkbox-label">Energy levels</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="priorities" value="sleep">
+                                <span class="checkbox-label">Sleep & recovery</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="priorities" value="stress">
+                                <span class="checkbox-label">Stress management</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="priorities" value="focus">
+                                <span class="checkbox-label">Focus & productivity</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" name="priorities" value="longevity">
+                                <span class="checkbox-label">Long-term health & aging</span>
+                            </label>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-back" data-prev="3">← Back</button>
+                            <button type="button" class="btn-continue" data-next="5">Continue →</button>
+                        </div>
+                    </div>
                 </div>
 
-                <button type="submit" class="btn-submit-app">Submit Application</button>
+                <!-- Step 5: Commitment -->
+                <div class="form-step" data-step="5">
+                    <div class="step-card">
+                        <h2 class="step-title">Commitment</h2>
+
+                        <div class="form-group full-width">
+                            <label class="form-label">How serious are you about improving your health right now? <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="commitment" value="10" required>
+                                    <span class="radio-label">10/10 — ready to take action immediately</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="commitment" value="7-8">
+                                    <span class="radio-label">7–8/10 — motivated but need structure/accountability</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="commitment" value="<7">
+                                    <span class="radio-label">&lt;7/10 — exploring options</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label class="form-label">Do you have the time and capacity to follow a structured coaching plan? <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="capacity" value="yes" required>
+                                    <span class="radio-label">Yes</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="capacity" value="no">
+                                    <span class="radio-label">No</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-back" data-prev="4">← Back</button>
+                            <button type="button" class="btn-continue" data-next="6">Continue →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6: Investment & Best-Fit Path -->
+                <div class="form-step" data-step="6">
+                    <div class="step-card">
+                        <h2 class="step-title">Investment & Best-Fit Path</h2>
+
+                        <div class="form-group full-width">
+                            <label class="form-label">High-touch 1:1 coaching is a premium service. Which best describes you right now? <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="investment" value="ready" required>
+                                    <span class="radio-label">I'm financially ready and prioritize results</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="investment" value="comfortable">
+                                    <span class="radio-label">I can comfortably invest if it's the right fit</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="investment" value="limited">
+                                    <span class="radio-label">My budget is limited (under $500/month), I'd prefer a DIY or lower-cost option</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-back" data-prev="5">← Back</button>
+                            <button type="button" class="btn-continue" data-next="7">Continue →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 7: Final Readiness Check -->
+                <div class="form-step" data-step="7">
+                    <div class="step-card">
+                        <h2 class="step-title">Final Readiness Check</h2>
+
+                        <div class="form-group full-width">
+                            <label class="form-label">1:1 coaching typically ranges from $500–$2,000+ per month depending on support level. Are you comfortable with this investment if it's the right fit? <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="finalReadiness" value="yes" required>
+                                    <span class="radio-label">Yes — I'm ready to book a call</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="finalReadiness" value="no">
+                                    <span class="radio-label">No — show me the DIY option</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <h3 class="info-title">What happens next:</h3>
+                            <p class="info-text">After you submit, we'll review your application and reach out within 48 hours with next steps tailored to your goals and readiness level.</p>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-back" data-prev="6">← Back</button>
+                            <button type="submit" class="btn-submit">Submit Application →</button>
+                        </div>
+                    </div>
+                </div>
+
             </form>
         </div>
     </section>
@@ -82,11 +338,12 @@
                 <div class="footer-brand">
                     <h3>BLUEPRXNT</h3>
                     <p>A performance health operating system built in elite sport and engineered for real life.</p>
+                    <p class="footer-tagline">Performance Health</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Navigate</h4>
+                    <h4>Navigation</h4>
                     <ul>
-                        <li><a href="index.html">The Problem</a></li>
+                        <li><a href="index.html#problem">The Problem</a></li>
                         <li><a href="system.html">The System</a></li>
                         <li><a href="index.html#how-it-works">How It Works</a></li>
                         <li><a href="index.html#who">Who It's For</a></li>
@@ -102,18 +359,16 @@
                 </div>
                 <div class="footer-cta">
                     <h4>Get Started</h4>
-                    <a href="apply.html" class="btn btn-primary">Apply for Coaching</a>
+                    <a href="apply.html" class="btn btn-secondary">Apply for Coaching</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p>&copy; 2026 Blueprxnt. All rights reserved.</p>
-                    <p class="footer-tagline">Performance Health</p>
-                </div>
+                <p>&copy; 2026 Blueprxnt. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <script src="js/apply.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
