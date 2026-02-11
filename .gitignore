@@ -20,10 +20,11 @@ node_modules/
 package-lock.json
 yarn.lock
 
-# Build outputs (if any are added later)
+# Build outputs
 dist/
 build/
 .cache/
+.next/
 
 # Environment variables
 .env

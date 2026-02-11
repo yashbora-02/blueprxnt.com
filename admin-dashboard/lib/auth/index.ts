@@ -1,5 +1,6 @@
 import { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import { adminAuth } from '@/lib/firebase-admin';
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -10,33 +11,60 @@ export const authOptions: NextAuthOptions = {
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
-        // For development - bypass database and use hardcoded credentials
-        console.log('Auth attempt:', {
-          email: credentials?.email,
-          password: credentials?.password,
-        });
-
         const email = credentials?.email?.trim().toLowerCase();
         const password = credentials?.password?.trim();
 
-        if (
-          email === 'admin@blueprxnt.com' &&
-          password === 'blueprxnt2024'
-        ) {
-          console.log('Auth success!');
+        if (!email || !password) return null;
+
+        try {
+          // Verify credentials against Firebase Auth
+          // Firebase Admin SDK doesn't have a direct password verify method,
+          // so we use the Firebase Auth REST API
+          const apiKey = process.env.FIREBASE_API_KEY;
+          const res = await fetch(
+            `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`,
+            {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                email,
+                password,
+                returnSecureToken: true,
+              }),
+            }
+          );
+
+          const data = await res.json();
+
+          if (!res.ok) {
+            console.log('Firebase auth failed:', data.error?.message);
+            return null;
+          }
+
+          // Get user details from Firebase Admin
+          const firebaseUser = await adminAuth.getUserByEmail(email);
+
+          // Check if user has admin custom claim
+          const customClaims = firebaseUser.customClaims || {};
+          if (!customClaims.admin) {
+            console.log('User is not an admin:', email);
+            return null;
+          }
+
           return {
-            id: '1',
-            email: 'admin@blueprxnt.com',
-            name: 'Admin User',
+            id: firebaseUser.uid,
+            email: firebaseUser.email || email,
+            name: firebaseUser.displayName || 'Admin',
             role: 'admin',
           };
+        } catch (error) {
+          console.error('Auth error:', error);
+          return null;
         }
-
-        console.log('Auth failed - invalid credentials');
-        return null;
       },
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET,
   session: {
     strategy: 'jwt',
   },

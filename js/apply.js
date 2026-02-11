@@ -47,10 +47,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Form submission
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', async function(e) {
         e.preventDefault();
 
         if (validateCurrentStep()) {
+            const submitBtn = form.querySelector('.btn-submit');
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
             // Get all form data
             const formData = new FormData(form);
             const data = {};
@@ -58,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // Convert FormData to object
             for (let [key, value] of formData.entries()) {
                 if (data[key]) {
-                    // Handle multiple values (checkboxes)
                     if (Array.isArray(data[key])) {
                         data[key].push(value);
                     } else {
@@ -69,11 +73,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
 
-            // Log form data (in production, send to server)
-            console.log('Application submitted:', data);
+            // Add metadata
+            data.submittedAt = firebase.firestore.FieldValue.serverTimestamp();
+            data.status = 'new';
 
-            // Redirect to success page
-            window.location.href = 'apply-success.html';
+            try {
+                await db.collection('applications').add(data);
+                window.location.href = 'apply-success.html';
+            } catch (error) {
+                console.error('Error submitting application:', error);
+                alert('Something went wrong. Please try again or contact us at hello@blueprxnt.com');
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
         }
     });
 

@@ -91,7 +91,7 @@ export default function LoginPage() {
 
           <div className="mt-6 text-center">
             <p className="text-sm text-zinc-500">
-              Default: admin@blueprxnt.com / blueprxnt2024
+              Admin access only
             </p>
           </div>
         </div>

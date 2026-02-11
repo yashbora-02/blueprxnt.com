@@ -154,10 +154,13 @@
         </div>
     </footer>
 
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
     <script src="js/script.js"></script>
     <script>
-        // Auto-select service based on quick action button clicks
         document.addEventListener('DOMContentLoaded', function() {
+            // Auto-select service based on quick action button clicks
             const serviceButtons = document.querySelectorAll('.btn-action[data-service]');
             const serviceSelect = document.getElementById('service');
 
@@ -165,13 +168,61 @@
                 button.addEventListener('click', function(e) {
                     const serviceValue = this.getAttribute('data-service');
                     if (serviceSelect && serviceValue) {
-                        // Small delay to allow smooth scroll to complete
                         setTimeout(() => {
                             serviceSelect.value = serviceValue;
                         }, 300);
                     }
                 });
             });
+
+            // Contact form submission to Firestore
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+
+                    const submitBtn = contactForm.querySelector('.btn-submit');
+                    const originalText = submitBtn.textContent;
+
+                    const formData = {
+                        name: document.getElementById('name').value.trim(),
+                        email: document.getElementById('email').value.trim(),
+                        service: document.getElementById('service').value,
+                        goals: document.getElementById('goals').value.trim(),
+                        source: document.getElementById('source').value.trim(),
+                        submittedAt: firebase.firestore.FieldValue.serverTimestamp(),
+                        status: 'new'
+                    };
+
+                    // Validation
+                    if (!formData.name || !formData.email || !formData.service || !formData.goals) {
+                        alert('Please fill in all required fields.');
+                        return;
+                    }
+
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(formData.email)) {
+                        alert('Please enter a valid email address.');
+                        return;
+                    }
+
+                    // Disable button while submitting
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Submitting...';
+
+                    try {
+                        await db.collection('contactSubmissions').add(formData);
+                        alert('Thank you for your message! We\'ll get back to you within 24-48 hours.');
+                        contactForm.reset();
+                    } catch (error) {
+                        console.error('Error submitting form:', error);
+                        alert('Something went wrong. Please try again or email us directly at hello@blueprxnt.com');
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                    }
+                });
+            }
         });
     </script>
 </body>
