@@ -328,6 +328,44 @@ section {
     }
 }
 
+/* Problem Cost Section */
+.problem-cost-section {
+    margin-top: 4rem;
+    padding: 3rem 2rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    border-left: 4px solid #0ea5e9;
+}
+
+.cost-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+    .cost-heading {
+        font-size: 2.5rem;
+    }
+}
+
+.cost-subheading {
+    font-size: 1.25rem;
+    color: #a1a1aa;
+    line-height: 1.5;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .cost-subheading {
+        font-size: 1.5rem;
+    }
+}
+
 /* Why Different Section */
 .why-different-section {
     gap: 3rem;
