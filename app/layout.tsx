@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter, Archivo } from 'next/font/google';
 import './globals.css';
 
@@ -15,11 +15,12 @@ const archivo = Archivo({
 export const metadata: Metadata = {
   title: 'Blueprxnt — Performance Coaching',
   description: 'Blueprxnt is a holistic performance system that integrates health, mindset, training, nutrition, and recovery to help you build lasting performance.',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-  },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
